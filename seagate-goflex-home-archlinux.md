@@ -1,3 +1,4 @@
+https://archlinuxarm.org/platforms/armv5/seagate-goflex-home
 - These instructions will void your warranty. While every precaution is taken to ensure nothing bad happens, all actions are at your own risk.
 - my.pogoplug.com, the mobile applications, and the desktop Pogoplug connector will no longer work.
 - Make sure to back up any data on the drive you plan to install on. Formatting the drive will delete any data on the drive.
