@@ -118,3 +118,10 @@ reboot
  admin_hipserv2_seagateplug_AAAA-BBBB-CCCC-DDDD
  admin1
 ```
+
+CLONE DISK
+-
+```
+dd if=/dev/sdb of=/dev/sdc bs=64K conv=noerror,sync status=progress
+
+```
