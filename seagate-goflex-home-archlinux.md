@@ -82,3 +82,34 @@ chmod +x goflexhome.sh
 pacman-key --init
 pacman-key --populate archlinuxarm
 ```
+
+
+CONVERT GOFLEX TO OLD VERSION:
+-
+
+After all sorts of banging my head against various brick walls trying to get my stupid goflex home back to stock, I think I finally figured it out. I couldn't get uboot to work, or net console, and all my attempts failed miserably. Eventually I found this:
+http://projects.doozan.com/uboot/
+Where he explains how to flash the NAND or mtd0 back to the stock firmware. The problem was the firmware was for the doskstar and he warned against using it. As a last ditch effort i tried using the kwb file from here:
+http://goflex.scottn.us/
+The resulting code is:
+CODE: SELECT ALL
+wget http://goflex.scottn.us/uboot-mtd0-orig-goflexhome.kwb
+flash_erase /dev/mtd0 0 4
+nandwrite /dev/mtd0 uboot-mtd0-orig-goflexhome.kwb
+
+
+So far so good, it seems to have reverted back to the stock firmware, without even needing to go through the seagate flash process! Please keep in mind that I am a linux noob and may have totally botched this, but upon first looks, it seems that all is well! Use at your own risk!
+Here are the specific steps I took:
+1. SSH into your goflex home
+2. enter
+```
+wget http://goflex.scottn.us/uboot-mtd0-orig-goflexhome.kwb
+flash_erase /dev/mtd0 0 4
+nandwrite /dev/mtd0 uboot-mtd0-orig-goflexhome.kwb
+```
+3. Reboot!
+```
+reboot
+```
+4. Check your router to see what ip the goflex has been assigned and use that IP to sign into the WebGui!
+5. Be done!!!
