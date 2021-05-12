@@ -113,3 +113,8 @@ reboot
 ```
 4. Check your router to see what ip the goflex has been assigned and use that IP to sign into the WebGui!
 5. Be done!!!
+6. Login account after reboot success:
+```
+ admin_hipserv2_seagateplug_AAAA-BBBB-CCCC-DDDD
+ admin1
+```
