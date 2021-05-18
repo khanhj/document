@@ -115,6 +115,7 @@ reboot
 5. Be done!!!
 6. Login account after reboot success:
 ```
+ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 admin_hipserv2_seagateplug_AAAA-BBBB-CCCC-DDDD@192.168.1.13
  admin_hipserv2_seagateplug_AAAA-BBBB-CCCC-DDDD
  admin1
 ```
