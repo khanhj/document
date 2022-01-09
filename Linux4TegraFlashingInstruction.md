@@ -31,11 +31,11 @@ INSTRUCTIONS:
 
 The directions below assume that ${RELEASE_NAME} refers to the
 respective package name as follows:
-
+```
     (${BOARD} refers to 'jetson-tk1')
 
     Jetson-tk1: Tegra124_Linux_R21.8.0_armhf.tbz2
-
+```
 1. Download the latest L4T release package for your developer system and the
    sample file system from https://developer.nvidia.com/linux-tegra
 
@@ -44,22 +44,23 @@ respective package name as follows:
    L4T release package for use with the developer board.
 
 2. Untar the files and assemble the rootfs:
-
+```
    sudo tar xpf ${RELEASE_NAME}
    cd Linux_for_Tegra/rootfs/
    sudo tar xpf ../../Tegra_Linux_Sample-Root-Filesystem_R21.8.0_armhf.tbz2
    cd ../
    sudo ./apply_binaries.sh
-
+```
 3. Flash the rootfs onto the system's internal eMMC.
 
    a) Put your system into "reset recovery mode" by holding down the RECOVERY
       button and press RESET button once on the main board.
+      
    b) Ensure your Linux host system is connected to the target device
       through the USB cable for flashing.
-
+```
       sudo ./flash.sh ${BOARD} mmcblk0p1  #This will take less than 10 minutes.
-
+```
 4. The target will automatically reboot upon completion of the flash. The
    command prompt will show up over the display that you have attached to
    the target. Log in as user login:ubuntu and password:ubuntu. All actions
@@ -70,21 +71,23 @@ respective package name as follows:
    installed):
 
    a) Make sure the Ethernet cable is connected.
+   
    b) Use eth0 for the built-in Ethernet port:
-
+```
       sudo dhclient eth0
-
+```
    c) Check to see if Ethernet is up and running. You should see an IP address
       associated with eth0.
-
+```
       ifconfig
       sudo apt-get update
       sudo apt-get install ubuntu-desktop
-
+```
    d) Reboot and the system will boot to the graphical desktop.
 
    NOTE: the above steps can be used to install other packages with
-         "sudo apt-get install".
-
+```        
+ sudo apt-get install
+```
 Please refer to the release notes provided with your software for up-to-date
 information on platform features and use.
